@@ -1,8 +1,9 @@
 # Cloudflare Quiz
 
-A small, dependency-free quiz game about Cloudflare Workers and related edge
-platform concepts. It runs entirely in the browser and keeps the top ten
+A small, dependency-free quiz game, implemented as a standalone-html, about Cloudflare Workers and related edge platform concepts. It runs entirely in the browser and keeps the top ten
 scores in `localStorage`.
+
+![Screenshot](assets/quiz.png)
 
 ## Features
 
@@ -20,25 +21,6 @@ No build step, package manager, or server-side runtime is required.
 1. Clone or download the repository.
 2. Open `index.html` in a modern web browser.
 3. Select **Start Quiz** to play.
-
-For a local development server, serve the repository directory with any static
-file server, then open `index.html` through that server. For example:
-
-```bash
-python3 -m http.server
-```
-
-The game is also suitable for deployment as a static site because all assets
-are loaded with relative paths.
-
-## Project structure
-
-```text
-.
-├── index.html   # Page markup and the four game views
-├── script.js    # Quiz state, event handlers, questions, and score storage
-└── style.css    # Layout, colors, buttons, and answer-state styling
-```
 
 ## How the game logic works
 
