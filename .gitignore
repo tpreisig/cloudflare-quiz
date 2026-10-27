@@ -1,2 +1,4 @@
-/fullstack/.env
-/fullstack/node_modules
+fullstack/.env
+fullstack/node_modules
+*/certificates/*.pem
+
