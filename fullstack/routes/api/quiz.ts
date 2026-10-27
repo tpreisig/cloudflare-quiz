@@ -1,23 +1,25 @@
-import express from "express";
+import express, { Router, Request, Response } from "express";
 import { readScores, computeScore, writeScores } from "../../controllers/scoreController.js";
 import { questions } from "../../controllers/quizController.js";
 
-const apiRouter = express.Router();
+const apiRouter: Router = express.Router();
 
 // GET requests
-apiRouter.get('/api/questions', (_req, res) => {
+apiRouter.get('/api/questions', (_req: Request, res: Response) => {
     res.json(
-        questions.map(({ question, options }, id) => ({ id, question, options }))
+        questions.map(
+            ({ question, options }: { question: string; options: (typeof questions)[number]["options"] }, id: number) => ({ id, question, options })
+        )
     );
 });
 
-apiRouter.get('/api/scores', (_req, res) => {
+apiRouter.get('/api/scores', (_req: Request, res: Response) => {
     res.json(readScores());
 });
 
 
 // POST requests
-apiRouter.post('/api/check', (req, res) => {
+apiRouter.post('/api/check', (req: Request, res: Response) => {
     try {
         const { index, selected } = req.body;
         if (
@@ -32,7 +34,7 @@ apiRouter.post('/api/check', (req, res) => {
         const correct = questions[index].answer;
         return res.json({ correct, isCorrect: selected === correct });
     } catch (err) {
-        return res.status(500).json({ error: err.message });
+        return res.status(500).json({ error: err instanceof Error ? err.message : 'Internal server error' });
     }
 });
 
