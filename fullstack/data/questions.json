@@ -78,5 +78,221 @@
             "Eventually consistent reads of data that changes infrequently"
         ],
         "answer": 1
+    },
+    {
+        "question": "Can you run cron jobs / scheduled tasks with Workers?",
+        "options": [
+            "Yes, using Cron Triggers",
+            "No, that’s impossible"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is Wrangler?",
+        "options": [
+            "A wrestling move",
+            "The official CLI tool to develop, test, and deploy Workers"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Are Workers good for A/B testing?",
+        "options": [
+            "Excellent — you can modify requests on the fly at the edge",
+            "Terrible idea"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What’s the difference between Workers and Pages Functions?",
+        "options": [
+            "Pages Functions are tied to static sites; Workers are more general-purpose",
+            "They’re exactly the same thing"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Can a Worker call an external API?",
+        "options": [
+            "No, they’re sandboxed",
+            "Yes, using fetch() just like in the browser"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the maximum size of a single Worker script?",
+        "options": [
+            "About 1 MB (compressed)",
+            "Unlimited"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which is faster for serving dynamic content?",
+        "options": [
+            "Traditional origin server in one location",
+            "Worker running on the edge"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Can you use npm packages in Workers?",
+        "options": [
+            "No way",
+            "Yes (most work, especially with compatibility flags)"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is R2?",
+        "options": [
+            "Cloudflare’s S3-compatible object storage (cheap & global)",
+            "A secret military project"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Are Workers vulnerable to cold starts?",
+        "options": [
+            "Yes, very noticeable",
+            "Almost non-existent thanks to the edge architecture"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What’s the best real-world use case for Cloudflare Workers?",
+        "options": [
+            "API gateways, auth middleware, image optimization, personalization, rate limiting, etc.",
+            "Only simple “hello world” demos"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the execution model of a Cloudflare Worker?",
+        "options": [
+            "Traditional multi-threaded processes",
+            "V8 Isolates (lightweight, secure, and instantly started)"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "How does Cold Start performance compare on Workers?",
+        "options": [
+            "Practically non-existent due to Isolates + smart global distribution",
+            "Noticeable delay similar to AWS Lambda"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of these is NOT possible directly inside a single Worker?",
+        "options": [
+            "Persistent local file system access across requests",
+            "Making outbound fetch() calls to third-party APIs"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the key advantage of using Durable Objects?",
+        "options": [
+            "Cheap long-term storage",
+            "Strongly consistent, single-threaded coordination + WebSocket state"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "When should you choose D1 over Workers KV?",
+        "options": [
+            "When you need blazing-fast key-value lookups with no queries",
+            "When you need relational SQL queries and joins"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the maximum response size from a Worker?",
+        "options": [
+            "100 MB (for paid plans; lower on free)",
+            " 25 MB"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "How does the Cache API work in Workers?",
+        "options": [
+            "It automatically caches everything unless you say otherwise",
+            "You must explicitly use caches.default.put() / match() — nothing is cached by default"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are Service Bindings used for?",
+        "options": [
+            "Connecting to external databases only",
+            "Calling one Worker from another as if it were a local function"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which statement is true about Tail Workers?",
+        "options": [
+            "They can modify the original response before it reaches the user",
+            "They run after the main Worker finishes and are great for logging/observability"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the main limitation of the HTMLRewriter API?",
+        "options": [
+            "It only works on responses under 1 MB",
+            "It streams and rewrites HTML at the edge with zero buffering in many cases"
+        ],
+        "answer": 1
+    },
+    {
+        "question": " Can you run WebAssembly in Cloudflare Workers?",
+        "options": [
+            "Natively and with excellent performance",
+            "Only through a complicated workaround"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the difference between Workers and Pages Functions in terms of scope?",
+        "options": [
+            "Pages Functions have higher limits",
+            "Workers are more general-purpose and can be deployed independently of a site"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is true about Queues in the Workers ecosystem?",
+        "options": [
+            "They guarantee exactly-once delivery",
+            "They provide at-least-once delivery with strong ordering per producer"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the correct way to handle environment-specific secrets?",
+        "options": [
+            "Hardcode them in the script",
+            "Use Workers Environment Variables or Secrets (encrypted at rest)"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "How does Smart Placement work?",
+        "options": [
+            "It intelligently chooses the best location based on fetch() calls and performance",
+            "It always runs your Worker in the visitor’s closest data center"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which storage option has the lowest latency for frequent small reads/writes?",
+        "options": [
+            "R2",
+            "Workers KV"
+        ],
+        "answer": 1
     }
 ]
