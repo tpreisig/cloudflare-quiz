@@ -99,10 +99,6 @@ function clearScores() {
 }
 
 
-
-
-
-
 const questions = [
     { question: "What is a Cloudflare Worker fundamentally?", options: ["A virtual machine that runs 24/7", "A lightweight serverless JavaScript function that executes on the edge"], answer: 1 },
     { question: "Where do Cloudflare Workers actually run?", options: ["Only in one giant data center in Virginia", "On Cloudflare's global edge network (+300 cities)"], answer: 1 },
@@ -114,5 +110,7 @@ const questions = [
     { question: "Can Workers access a traditional file system?", options: ["No — they’re stateless by design (use KV, R2, or D1 instead)", "Yes, like any normal server"], answer: 0 },
     { question: "What does the edeg on edeg computing mean?", options: ["The bleeding edge of technology", "Physically close to the end user"], answer: 1 },
     { question: "Which storage option is best for simple key-value dat in Cloudflare Workers?", options: ["A PostgreSQL database you manage yourself", "Workers KV"], answer: 1 },
-    { question: "What happens is your Cloudflare Worker execeeds CPU limits on the free plan?", options: ["It keeps running forever", "It gets terminated (but paid plans give more time)"], answer: 1 }
+    { question: "What happens is your Cloudflare Worker execeeds CPU limits on the free plan?", options: ["It keeps running forever", "It gets terminated (but paid plans give more time)"], answer: 1 },
+    { question: "What is Workers KV best suited for?", options: ["Highly consistent, frequently updated data", "Eventually consistent reads of data that changes infrequently"], answer: 1 },
+
 ];
